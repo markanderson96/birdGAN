@@ -1,0 +1,31 @@
+set:
+  features: false
+  train: false
+  num_workers: 8
+  gpus: -1
+  accelerator: dp
+
+path:
+  root_dir: /home/mark/projects/birdGAN
+  data_dir: ${path.root_dir}
+  feat_dir: ${path.root_dir}/features
+
+feat:
+  n_fft: 1024
+  hop: 0.05
+  mel: true
+  n_mels: 128
+
+hparams:
+  latent_dims: 100
+  lr: 0.0002
+  beta1: 0.5
+
+image:
+  img_channels: 1
+  img_height: 128
+  img_width: ${image.img_height}
+
+train:
+  epochs: 1000
+  batch_size: 8
